@@ -1,3 +1,7 @@
 /core/cache
 /lib/signatures/
 /core/local.config.php
+sftp-config.json
+composer.phar
+composer.lock
+/vendor
