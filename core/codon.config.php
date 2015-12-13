@@ -55,10 +55,14 @@ define('PAGES_PATH', CORE_PATH.DS.'pages');
 define('LIB_PATH', SITE_ROOT.DS.'lib');
 define('DOCTRINE_MODELS_PATH', CORE_PATH.DS.'models');
 
-$version = phpversion();
-if($version[0] != '5')
-{
-	die('You are not running PHP 5+');
+
+// Function calls are expensive.
+// $version = phpversion();
+
+// echo version_compare(PHP_VERSION, '5.0');die;
+
+if (version_compare(PHP_VERSION, '5.0') <= 0) {
+	die('Your system must be running PHP 5 or above');
 }
 
 require CLASS_PATH.DS.'autoload.php';
